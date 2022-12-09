@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+<title>ECE225</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+/* Style the tab */
+.bg-image {
+  /* The image used */
+  background-image: url("../static/assets/img/shutterstock_220727071.jpg");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  background-size:1700px;
+  background-image: url("../static/assets/img/shutterstock_220727071.jpg");
+  background-color: #cccccc;
+  backdrop-filter: blur(9px);
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: #f1f1f1;
+  }
+
+.leftside{
+  /* background-color:white; */
+  transition: background 0.3s ease-in-out;
+}
+
+.leftside:hover{
+  background: #DDDDDD;
+}
+
+.leftside:active{
+  background-color:#f1f1f1;
+
+}
+
+.tab-overview1{
+  background-color:#f1f1f1;
+  width: 600px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:250px;
+  margin-top:-635px;
+  transition: background 0.3s ease-in-out;
+}
+
+.tab-overview1:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+
+}
+
+.tab-overview2{
+  background-color:#f1f1f1;
+  width: 550px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:900px;
+  margin-top:-635px;
+  transition: background 0.3s ease-in-out;
+}
+.tab-overview2:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+
+}
+.tab-overview3{
+  background-color:#f1f1f1;
+  width: 550px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:250px;
+  margin-top:-295px;
+  transition: background 0.3s ease-in-out;
+}
+.tab-overview3:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+
+}
+.tab-overview4{
+  background-color:#f1f1f1;
+  width: 600px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:850px;
+  margin-top:-295px;
+  transition: background 0.3s ease-in-out;
+}
+.tab-overview4:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+  transition: background 0.3s ease-in-out;
+}
+.vertical {
+            border-left: 6px solid gray;
+            height: 265px;
+            margin-top:-265px;
+            margin-left:-580px;
+            position:absolute;
+            left: 50%;
+        }
+
+.popular-button{
+  background-color:white;
+  transition: background 0.3s ease-in-out;
+  position:absolute;
+  margin-left:120px;
+  width:200px;
+  height:60px;
+  border-width: 2px;
+}
+.popular-button:hover{
+  background: #DDDDDD;
+}
+
+.findBook{
+  margin-left:250px;
+  margin-top:-650px;
+  width:1000px;
+  height:500px;
+}
+
+.submitButton{
+  /* width:100px; */
+}
+
+.dot {
+  height: 300px;
+  width: 300px;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s ease-in-out;
+}
+
+.dot:hover{
+  background: #DDDDDD;
+}
+
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity">
+<div class="w3-clear"></div>
+<br><br>
+<header class="w3-center w3-margin-bottom">
+  <h1 style="color:Blue;"><b>GoodRead ECE225</b></h1>
+  <h4 s><b style= "">Discover Your Favorite books</b></h4>
+</header>
+</div>
+
+
+
+<!-- Photo Grid -->
+<div class="w3-row" id="myGrid" style="margin-bottom:128px">
+  <div class="w3-third">
+
+  </div>
+
+  <button type="button" class="btn btn-primary" style="width:80px;position:absolute;margin-left:910px;margin-top:-120px;background-color:white;color:#0c6efd">Login</button>
+  <button type="button" class="btn btn-primary" style="width:80px;position:absolute;margin-left:1000px;margin-top:-120px;background-color:white;color:#0c6efd">SignUp</button>
+
+  <div class="w3-third">
+    <!-- <img src="./images/photo2.png" style="width:98%; margin-left:10px; margin-right:15px;"><br><br><br> -->
+    <!-- <img src="./images/photo1.png" style="width:98%; margin-left:10px; margin-right:15px;"> -->
+  </div>
+  <img src="../static/assets/img/book-svgrepo-com.svg" alt="" width=6% style="margin-left:-520px;margin-top:-120px">
+  <div class="w3-third">
+    <div class="container">
+      
+      <nav class="nav nav-tabs nav-justified flex-column " style="width:200px;margin-left:-40px;margin-top:100px;font-weight:900;font-size:22px">
+        <a data-toggle="tab" href="#home" class="nav-item nav-link active leftside" style="color:black">Overview</a>
+        <a class="nav-item nav-link leftside" data-toggle="tab" href="#dataset" style="color:black">Datasets</a>
+        <a class="nav-item nav-link leftside" data-toggle="tab" href="#explore" style="color:black">Explore</a>
+        <a class="nav-item nav-link leftside" data-toggle="tab" href="#find" style="color:black">Find Book</a>
+        <a class="nav-item nav-link leftside" data-toggle="tab" href="#about" style="color:black">About Us</a>
+        
+        <!-- <li><a data-toggle="tab" href="#prediction">Find Your Book</a></li>
+        <li><a data-toggle="tab" href="#resouces">Resources</a></li> -->
+      </nav>
+      <div class = "vertical" ></div>
+      <div style="font-size:19px;margin-bottom:315px"></div>
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <div class="tab-overview1">
+            <p style="position:absolute;padding:15px;font-size:25px;margin-left:20px;margin-top:9px;font-weight:900"> Database</p>
+            <p style="font-size:18px;padding:38px;position:absolute;margin-top:40px">
+              The world is one big data problem! Take a look at our immersive databases and how we<br> process data to provide you the best<br> book to read next.
+            </p>
+            <img src="../static/assets/img/data-svgrepo-com_1.svg" alt="" width=30% style="position:absolute;margin-left:380px;margin-top:105px">
+            <div style="position:absolute;margin-left:40px;margin-top:240px">
+              <a data-toggle="tab" href="#dataset" style="font-size:17px;">Read more →</a></li>
+            </div>
+          </div>
+          
+          <div class="tab-overview2">
+            <p style="position:absolute;padding:15px;font-size:25px;margin-left:20px;margin-top:9px;font-weight:900"> Explore More</p>
+            <p style="position:absolute;font-size:18px;padding:38px;margin-bottom:-9px;margin-top:40px">
+              In this section, we provide static and dynamic graphs to help you to find your own<br> insights. You will know what’s the<br> trending books, genre, authors right<br>  now. Come in and explore!
+            </p>
+            <img src="../static/assets/img/brain-svgrepo-com_2.svg" alt="" width=30% style="position:absolute;margin-left:350px;margin-top:105px">
+            <div style="position:absolute;margin-left:40px;margin-top:240px">
+              <a data-toggle="tab" href="#explore" style="position:absolite;font-size:17px;margin-bottom:0px">Read more →</a></li>
+            </div>
+          </div>
+          <div class="tab-overview3">
+            <p style="position:absolute;padding:15px;font-size:25px;margin-left:350px;margin-top:9px;font-weight:900"> Find a Book</p>
+            <p style="position:absolute;font-size:18px;padding:38px;margin-bottom:-9px;text-align: right;margin-left:160px;margin-top:40px">
+              Still want to hear our suggestions?<br> We have developed advanced<br>  machine learning models to <br> generate personalized<br>  book recommendations<br>  only for you. 
+            </p>
+            <img src="../static/assets/img/search-svgrepo-com_1.svg" alt="" width=30% style="position:absolute;margin-left:20px;margin-top:20px">
+            <div style="position:absolute;margin-left:45px;margin-top:240px;margin-bottom:10px">
+              <a data-toggle="tab" href="#find" style="font-size:17px;margin-bottom:300px">Read more →</a></li>
+            </div>
+          </div>
+          <div class="tab-overview4">
+            <p style="position:absolute;padding:15px;font-size:25px;margin-left:430px;margin-top:9px;font-weight:900">About Us</p>
+            <p style="position:absolute;font-size:18px;padding:38px;text-align: right;margin-top:50px;margin-left:-100px;width:700px">
+              Who are we?<br> Want to know more about our team<br> or have other questions? <br>
+              <a href = "https://github.com/williamliuzhenwei/ECE225A">Github Link →</a>
+            </p>
+            <img src="../static/assets/img/about-us-svgrepo-com.svg" alt="" width=30% style="position:absolute;margin-left:30px;margin-top:20px">
+            <div style="position:absolute;margin-left:430px;margin-top:10px">
+              <a data-toggle="tab" href="#about" style="position:absolute;font-size:17px;margin-top:230px;margin-left:-380px;width:120px">Read more →</a></li>
+            </div>
+          </div>
+          <p></p>
+        </div>
+
+        <div id="dataset" class="tab-pane fade" style="">
+          <br><br>
+          <img src="../static/assets/img/data-svgrepo-com_1.svg" alt="" width=6% style="position:absolute;margin-left:-40px;margin-top:-800px;background-color: white;">
+          <a style = "position:absolute;margin-top:-680px;margin-left:650px;font-size: 18px;" href="https://drive.google.com/file/d/1gmqJsJWq0BEyaIo1l-iA7ZCFPexXedkR/view?usp=sharing" target="_blank">
+            Click to the Dataset
+          </a>
+          <div style="position:absolute;background-color:#f1f1f1;width:200px;height:80px;margin-left:300px;margin-top:-630px;border-radius: 15px;">
+            
+            <p style="font-size:17px;font-weight:bold;margin-top:14px;color:#0c6efd;text-align:center">
+              Books: 
+            </p>
+            <p style="font-size:20px;margin-top:-14px;color:#0c6efd;text-align:center">
+              126674
+            </p>
+          </div>
+
+          <div style="position:absolute;background-color:#f1f1f1;width:200px;height:80px;margin-left:550px;margin-top:-630px;border-radius: 15px;">
+            <p style="font-size:17px;font-weight:bold;margin-top:14px;color:#0c6efd;text-align:center">
+              Unique Genres:
+            </p>
+            <p style="font-size:22px;margin-top:-17px;color:#0c6efd;text-align:center">
+              5773
+            </p>
+
+          </div>
+          <div style="position:absolute;background-color:#f1f1f1;width:200px;height:80px;margin-left:800px;margin-top:-630px;border-radius: 15px;">
+            <p style="font-size:17px;font-weight:bold;margin-top:14px;color:#0c6efd;text-align:center">
+              Authors:
+            </p>
+            <p style="font-size:20px;margin-top:-14px;color:#0c6efd;text-align:center">
+              58900
+            </p>
+          </div>
+
+          <div style="position:absolute;background-color:#f1f1f1;width:200px;height:80px;margin-left:1050px;margin-top:-630px;border-radius: 15px;">
+            <p style="font-size:17px;font-weight:bold;margin-top:14px;color:#0c6efd;text-align:center">
+              Different Countries:
+            </p>
+            <p style="font-size:20px;margin-top:-14px;color:#0c6efd;text-align:center">
+              164
+            </p>
+          </div>
+
+          <img src="../static/assets/img/static1.png" alt="" width=100% style="margin-left:850px;margin-top:-580px">
+          <img src="../static/assets/img/static2.png" alt="" width=100% style="margin-left:280px;margin-top:-650px">
+        </div>
+        <!-- <a class="btn btn-info" href="https://colab.research.google.com/drive/1CiGnZMA6SlUiPp5PmPFzpmlvKp5V5gJ_#scrollTo=TyMZvnbI6gJQ" >Click Me</a>
+        </a> -->
+        <div id="explore" class="tab-pane fade">
+          <img src="../static/assets/img/brain-svgrepo-com_2.svg" alt="" width=6% style="position:absolute;margin-left:-40px;margin-top:-760px;background-color: white;">
+          <button onclick = "" type="button" class="btn btn-info popular-button" data-toggle="tab" href="#fantasy" style="margin-left:300px;margin-top:-630px;font-size:17px;margin-bottom:300px;color:Black" >
+            <!-- <a  style="font-size:17px;margin-bottom:300px;color:Black" > -->
+              Fantasy
+            <!-- </a> -->
+          </button>
+
+          <button onclick = "" type="button" class="btn btn-info popular-button" data-toggle="tab" href="#romance" style="margin-left:650px;margin-top:-630px;font-size:17px;margin-bottom:300px;color:Black" >
+              Romance
+          </button>
+
+          <button onclick = "" type="button" class="btn btn-info popular-button" data-toggle="tab" href="#young" style="margin-left:1000px;margin-top:-630px;font-size:17px;margin-bottom:300px;color:Black" >
+            Young Adult
+          </button>
+
+        </div>
+
+        <div id="fantasy" class="tab-pane fade">
+            <div>
+              
+              <img src="../static/assets/img/1.jpeg" alt="" width=18% style="margin-left:300px;margin-top:-930px" >
+              
+              <p style="width: 500px;margin-left:410px;margin-top:-540px;font-size:20px">
+                Title: Red Queen<br>
+                Author: Victoria Aveyard<br>
+                Avg Rating: 9.5/10<br>
+                <a href="https://www.amazon.com/Red-Queen-Victoria-Aveyard/dp/006231064X/ref=sr_1_1?crid=OGUONQIX21VN&keywords=red+queen&qid=1653440019&sprefix=red+queen%2Caps%2C143&sr=8-1" target="_blank">
+                  <button class = "btn btn-info" style="margin-top:5px">
+                    Click to Purchase
+                  </button>
+                </a>
+              </p>
+              
+            </div>
+
+            <div>
+              <img src="../static/assets/img/2.jpg" alt="" width=18% style="margin-left:760px;margin-top:-970px">
+              <p style="width: 500px;margin-left:875px;margin-top:-558px;font-size:20px">
+                Title: The Phantom Tollbooth<br>
+                Author: Norton Juster<br>
+                Avg Rating: 8.8/10<br>
+                <a href="https://www.amazon.com/Phantom-Tollbooth-Norton-Juster/dp/0394820371/ref=sr_1_1?crid=YHGWACLTJUNY&keywords=The+Phantom+Tollbooth&qid=1653440222&sprefix=the+phantom+tollbooth%2Caps%2C217&sr=8-1" target="_blank">
+                  <button class = "btn btn-info" style="margin-top:5px">
+                    Click to Purchase
+                  </button>
+                </a>
+              </p>
+              
+            </div>
+
+            <div>
+              <img src="../static/assets/img/3.jpeg" alt="" width=18% style="margin-left:300px;margin-top:-630px">
+              <p style="width: 500px;margin-left:410px;margin-top:-390px;font-size:20px">
+                Title: The Lies of Locke Lamora <br>
+                Author: Scott Lynch<br>
+                Avg Rating: 9.4/10<br>
+                <a href="https://www.amazon.com/The-Lies-of-Locke-Lamora-audiobook/dp/B082L4QV4C/ref=sr_1_1?crid=2SY0SJ1THSTDQ&keywords=The+Lies+of+Locke+Lamora&qid=1653440307&sprefix=the+lies+of+locke+lamora%2Caps%2C118&sr=8-1" target="_blank">
+                  <button class = "btn btn-info" style="margin-top:5px">
+                    Click to Purchase
+                  </button>
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <img src="../static/assets/img/4.jpeg" alt="" width=18% style="margin-left:760px;margin-top:-660px">
+              <p style="width: 500px;margin-left:880px;margin-top:-410px;font-size:20px">
+                Title: Gardens of the Moon                <br>
+                Author: Steven Erikson<br>
+                Avg Rating: 8.9/10<br>
+                <a href="https://www.amazon.com/Gardens-of-Moon-Steven-Erikson-audiobook/dp/B009L65JEG/ref=sr_1_1?crid=2FQBT8LU18O8X&keywords=Gardens+of+the+Moon&qid=1653440373&s=audible&sprefix=gardens+of+the+moon%2Caudible%2C128&sr=1-1" target="_blank">
+                  <button class = "btn btn-info" style="margin-top:5px">
+                    Click to Purchase
+                  </button>
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <img src="../static/assets/img/5.jpeg" alt="" width=18% style="margin-left:300px;margin-top:-330px">
+              <p style="width: 500px;margin-left:410px;margin-top:-240px;font-size:20px">
+                Title: Nanny McPhee and the Big Bang <br>
+                Author: Emma Thompson<br>
+                Avg Rating: 8.1/10<br>
+                <a href="https://www.amazon.com/Nanny-McPhee-Big-Bang/dp/B004M49Q14/ref=sr_1_1?crid=10B8RQVQUGTRD&keywords=Nanny+McPhee+and+the+Big+Bang&qid=1653440388&s=audible&sprefix=nanny+mcphee+and+the+big+bang%2Caudible%2C103&sr=1-1" target="_blank">
+                  <button class = "btn btn-info" style="margin-top:5px">
+                    Click to Purchase
+                  </button>
+                </a>
+              </p>
+            </div>
+
+        </div>
+
+        <div id="romance" class="tab-pane fade">
+          <div>
+            
+            <img src="../static/assets/img/6.jpg" alt="" width=18% style="margin-left:300px;margin-top:-930px" >
+            
+            <p style="width: 500px;margin-left:410px;margin-top:-540px;font-size:20px">
+              Title: Fifty Shades of Grey <br>
+              Author: E. L. James<br>
+              Avg Rating: 8/10<br>
+              <a href="https://www.amazon.com/Fifty-Shades-of-Grey-E-L-James-audiobook/dp/B007R07BK8/ref=sr_1_1?crid=3UC5HITJY76FP&keywords=Fifty+Shades+of+Grey&qid=1653440775&s=audible&sprefix=fifty+shades+of+grey%2Caudible%2C138&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+            
+          </div>
+
+          <div>
+            <img src="../static/assets/img/7.jpg" alt="" width=25% style="margin-left:745px;margin-top:-970px">
+            <p style="width: 500px;margin-left:875px;margin-top:-558px;font-size:20px">
+              Title: Bared to You              <br>
+              Author: Sylvia Day<br>
+              Avg Rating: 8.8/10<br>
+              <a href="https://www.amazon.com/Bared-to-You-Sylvia-Day-audiobook/dp/B008DNU68M/ref=sr_1_1?crid=1G9Q4C30HUWB7&keywords=Bared+to+You&qid=1653440856&s=audible&sprefix=bared+to+you%2Caudible%2C108&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+            
+          </div>
+
+          <div>
+            <img src="../static/assets/img/8.jpeg" alt="" width=18% style="margin-left:300px;margin-top:-630px">
+            <p style="width: 500px;margin-left:410px;margin-top:-390px;font-size:20px">
+              Title: Taking Chances
+              <br>
+              Author: Molly McAdams<br>
+              Avg Rating: 8.4/10<br>
+              <a href="https://www.amazon.com/Taking-Chances-Molly-McAdams-audiobook/dp/B00HDL1TKO/ref=sr_1_1?crid=74INCJ5J5O5N&keywords=Taking+Chances&qid=1653440923&s=audible&sprefix=taking+chances%2Caudible%2C100&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <img src="../static/assets/img/9.png" alt="" width=18% style="margin-left:760px;margin-top:-660px">
+            <p style="width: 500px;margin-left:880px;margin-top:-410px;font-size:20px">
+              Title: Easy                <br>
+              Author: Tammara Webber<br>
+              Avg Rating: 9.0/10<br>
+              <a href="https://www.amazon.com/Easy-Tammara-Webber-audiobook/dp/B009WUEU64/ref=sr_1_1?crid=3HBDEL4CQYS8F&keywords=Easy&qid=1653440955&s=audible&sprefix=easy%2Caudible%2C133&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <img src="../static/assets/img/10.jpeg" alt="" width=18% style="margin-left:300px;margin-top:-330px">
+            <p style="width: 500px;margin-left:410px;margin-top:-240px;font-size:20px">
+              Title: Gabriel's Inferno <br>
+              Author: Sylvain Reynard<br>
+              Avg Rating: 8.8/10<br>
+              <a href="https://www.amazon.com/Gabriels-Inferno-Trilogy-Book-ebook/dp/B008R25E0Y/ref=sr_1_3?crid=L9N3FEJQL1DD&keywords=Gabriel%27s+Inferno&qid=1653441031&sprefix=%2Caps%2C248&sr=8-3"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+          </div>
+
+        </div>
+        
+        <div id="young" class="tab-pane fade">
+          <div>
+            
+            <img src="../static/assets/img/11.jpeg" alt="" width=18% style="margin-left:300px;margin-top:-930px" >
+            
+            <p style="width: 500px;margin-left:410px;margin-top:-540px;font-size:20px">
+              Title: Allegiant
+              <br>
+              Author: Veronica Roth<br>
+              Avg Rating: 8.2/10<br>
+              <a href="https://www.amazon.com/Allegiant-Collectors-Divergent-Veronica-Hardcover/dp/B014TA8GT8/ref=sr_1_6?crid=1W42WHG22CGNM&keywords=Allegiant&qid=1653441385&sprefix=gabriel%27s+inferno%2Caps%2C362&sr=8-6"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+            
+          </div>
+
+          <div>
+            <img src="../static/assets/img/12.jpeg" alt="" width=20% style="margin-left:745px;margin-top:-970px">
+            <p style="width: 500px;margin-left:875px;margin-top:-558px;font-size:20px">
+              Title: The Sisterhood of the Traveling Pants              <br>
+              Author: Ann Brashares<br>
+              Avg Rating: 9.4/10<br>
+              <a href="https://www.amazon.com/Sisterhood-Traveling-Pants-Book-1/dp/0385730586/ref=sr_1_1?crid=XC9JNXFJODKO&keywords=the+sisterhood+of+the+traveling+pants+book&qid=1653441477&s=books&sprefix=The+Sisterhood+of+the+Traveling+Pants%2Cstripbooks%2C123&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+            
+          </div>
+
+          <div>
+            <img src="../static/assets/img/13.jpeg" alt="" width=18% style="margin-left:300px;margin-top:-600px">
+            <p style="width: 500px;margin-left:410px;margin-top:-390px;font-size:20px">
+              Title: Aristotle and Dante<br> Discover the Secrets<br> of the Universe
+              <br>
+              Author: Benjamin Alire Sáenz<br>
+              Avg Rating: 9.4/10<br>
+              <a href="https://www.amazon.com/Aristotle-Dante-Discover-Secrets-Universe/dp/1442408936/ref=sr_1_1?crid=1IXRC18WYLKW9&keywords=Aristotle+and+Dante+Discover+the+Secrets&qid=1653441556&s=books&sprefix=aristotle+and+dante+discover+the+secrets%2Cstripbooks%2C112&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <img src="../static/assets/img/14.jpeg" alt="" width=18% style="margin-left:750px;margin-top:-660px">
+            <p style="width: 500px;margin-left:880px;margin-top:-410px;font-size:20px">
+              Title: Among the Hidden                <br>
+              Author: Margaret Peterson Haddix<br>
+              Avg Rating: 9.4/10<br>
+              <a href="https://www.amazon.com/Easy-Tammara-Webber-audiobook/dp/B009WUEU64/ref=sr_1_1?crid=3HBDEL4CQYS8F&keywords=Easy&qid=1653440955&s=audible&sprefix=easy%2Caudible%2C133&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <img src="../static/assets/img/15.jpeg" alt="" width=18% style="margin-left:750px;margin-top:-330px">
+            <p style="width: 500px;margin-left:880px;margin-top:-240px;font-size:20px">
+              Title: The Boundless<br>
+              Author: Kenneth Oppel<br>
+              Avg Rating: 9.0/10<br>
+              <a href="https://www.amazon.com/Boundless-Kenneth-Oppel/dp/1442472898/ref=sr_1_1?crid=21FUAUOMEEJT8&keywords=the+Boundless&qid=1653441817&s=books&sprefix=the%2Cstripbooks%2C107&sr=1-1"target="_blank">
+                <button class = "btn btn-info" style="margin-top:5px">
+                  Click to Purchase
+                </button>
+              </a>
+            </p>
+          </div>
+
+        </div>
+
+        <div id="find" class="tab-pane fade  findBook" href="/search" style="height:630px">
+          <img src="../static/assets/img/search-svgrepo-com_1.svg" alt="" width=6% style="position:absolute;margin-left:-290px;margin-top:-110px;background-color: white;">
+          <a>
+          <div style="background-color: #f1f1f1; border-radius: 20px; height:280px;width:700px;margin-left:140px">
+          <form method="POST" href="/search" action="/search">
+            
+            <h3 style="text-align: center;margin-top:320px;padding:50px">Recommendation System</h3>
+            <!-- <h4>Or, Please put a book name here so we can recommend a similar book to you!</h4>
+            <h4>Or, put whatever you want!</h4> -->
+
+            <div class="mb-3 d-flex justify-content-center" style="margin-top: 80px;">
+
+                <select name='select_model' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="width:200px;height:40px;margin-top:-25px;border-radius: 7px;text-align: center;font-size:16px;margin-left:-170px;">
+                  <option selected>Select a model</option>
+                  <option value="Cosine_sim">Summary (Cosine Similarity)</option>
+                  <option value="Item-based">Title (Collaborative Filtering)</option>
+                  <option value="Content-based">Books Info (Collaborative Filtering)</option>
+                  <option value="Item+Content">Mixed</option>
+                </select>
+                
+                <div style="position:absolute;margin-top:50px;">
+                  <label>
+                    <p style="margin-left:0px;text-align: center;">
+                    </p>
+                    <input type="text" name="book" placeholder=" &nbsp; &nbsp;Please Input a String (Based on the model)" style="position:absolute;margin-left:-185px;margin-top:-160px;width:370px;height:50px;border-radius:7px;border-width: 1px;">
+                  </label>
+                </div>
+                  <div style = "">
+                    <input type="submit" value="Search" class="btn btn-primary submitButton" href="/search" style="height:40px;width:100px;position:absolute;margin-top:-25px;margin-left:40px">
+                  </div>
+
+                <div style="position:absolute;margin-top:110px;margin-left:0px;height:900px;">
+		  <h4>How to use our Recommendation System?</h4><br>
+		  <h5 >As simple as it may seem, put the title of the book and get recommendation!<br><br>
+			  !Warning:<br> BEAWARE of book series such as Harry Potter, you have to input the complete book name,<br> e.g. Harry Potter and the Chamber of Secrets (Book 2), Emma (Signet Classics (Paperback))<br><br>
+                    
+		    If there is a typo or mismatch in the book title, the system is unable to generate any recommendation. <br><br>
+
+                    <p style="font-weight:bold">Select a model:</p> We have prepared multiple models so you can choose the one that fits your needs. For example,<br>
+                    if you want to be recommended with similar content of the book title you put in the first box, then select Title.</h5><br>
+                  
+                </div>
+            </div>
+            </div>
+          </form>
+        </a>
+        </div>
+        
+        <br>
+        
+        <div id="about" class="tab-pane fade">
+          <img src="../static/assets/img/about-us-svgrepo-com.svg" alt="" width=6% style="position:absolute;margin-left:-40px;margin-top:-770px;background-color: white;">
+          <div class="dot" style="position:absolute;margin-top:-670px;margin-left:250px" >
+            <p style="margin-top:70px;margin-left:65px;font-size:20px;font-weight: bold;">Processing Team:</p>
+            <p style="margin-top:30px;font-size:18px;text-align: center;">Fangning Cao,<br> Ximei Wu</p>
+     
+          </div>
+          <div class="dot" style="position:absolute;margin-top:-670px;margin-left:650px" >
+            <p style="margin-top:70px;margin-left:70px;font-size:20px;font-weight: bold;">Modeling Team:</p>
+            <p style="margin-top:30px;font-size:18px;text-align: center;">Conghao Liu, <br>Gordon Duncan, <br> Jiayue Li</p>
+           
+          </div>
+          <div class="dot" style="position:absolute;margin-top:-670px;margin-left:1050px" >
+            <p style="margin-top:70px;font-size:20px;font-weight: bold;text-align: center;">AWS Team:</p>
+            <p style="margin-top:30px;font-size:18px;text-align: center;">Joyce Huang,<br>Zhenwei Liu</p>
+            <p></p>
+          </div>
+          <div style="position:absolute;margin-top:-340px;margin-left:250px;">
+            <h4 >Roles and Responsibilities:</h4>
+            <p style="font-size:30px"><h4>Processing Team:</h4>
+              Good recommendations relie on a strong Database! Our processing team is the foundation of our product.<br> They are responsible for collecting the data from multiple sources, cleaning the raw data and extracting key information. <br>
+              <br>
+              <h4>Modeling Team:</h4>
+              Then the baton is passed to the modeling team, which trains and utilize advanced machine learning model. The model is smart enough<br> to learn your preferences and generate your next favorite book.<br>
+              <br>
+              <h4>AWS Team:</h4>
+              Last but not least, the AWS created everything you see on our website. The layout, buttons and functionalities are all created by<br> them. We hook our dashboard on an online server, so our service is always within reach!</p>
+          </div> 
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:40px">
+  <a href="https://github.com/williamliuzhenwei/ECE225A"><i class="fa fa-github w3-hover-opacity"></i></a>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+
+function hide(elem) {
+  var element = elem;
+  explore.remove('slow');
+}
+// Toggle grid padding
+function myFunction() {
+  var x = document.getElementById("myGrid");
+  if (x.className === "w3-row") {
+    x.className = "w3-row-padding";
+  } else {
+    x.className = x.className.replace("w3-row-padding", "w3-row");
+  }
+}
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+$('#pic-changer').change(function(){ //if the select value gets changed
+   var imageSource = $(this).find(':selected').data('picture'); //get the data from data-picture attribute
+   if(imageSource){ //if it has data
+      $('#image-location').html('<img src="./images/'+imageSource+'">'); // insert image in div image-location
+   } else {
+      $('#image-location').html(''); //remove content from div image-location, thus removing the image
+   }
+})
+</script>
+
+</body>
+</html>

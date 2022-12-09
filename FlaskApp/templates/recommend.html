@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="../static/assets/css/our.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+/* Style the tab */
+.bg-image {
+  /* The image used */
+  background-image: url("../static/assets/img/shutterstock_220727071.jpg");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  background-size:1700px;
+  background-image: url("../static/assets/img/shutterstock_220727071.jpg");
+  background-color: #cccccc;
+  backdrop-filter: blur(9px);
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: #f1f1f1;
+  }
+
+.tab-overview1{
+  background-color:#f1f1f1;
+  width: 600px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:250px;
+  margin-top:-635px;
+  transition: background 0.3s ease-in-out;
+}
+
+.tab-overview1:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+
+}
+
+.tab-overview2{
+  background-color:#f1f1f1;
+  width: 550px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:900px;
+  margin-top:-635px;
+  transition: background 0.3s ease-in-out;
+}
+.tab-overview2:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+
+}
+.tab-overview3{
+  background-color:#f1f1f1;
+  width: 550px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:250px;
+  margin-top:-295px;
+  transition: background 0.3s ease-in-out;
+}
+.tab-overview3:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+
+}
+.tab-overview4{
+  background-color:#f1f1f1;
+  width: 600px;
+  height:300px;
+  border-radius:25px;
+  position:absolute;
+  margin-left:850px;
+  margin-top:-295px;
+  transition: background 0.3s ease-in-out;
+}
+.tab-overview4:hover{
+  /* background-color: gray; */
+  background: #DDDDDD;
+  transition: background 0.3s ease-in-out;
+}
+.vertical {
+            border-left: 6px solid gray;
+            height: 265px;
+            margin-top:-265px;
+            margin-left:-580px;
+            position:absolute;
+            left: 50%;
+        }
+
+.popular-button{
+  background-color:white;
+  transition: background 0.3s ease-in-out;
+  position:absolute;
+  margin-left:120px;
+  width:200px;
+  height:60px;
+  border-width: 2px;
+}
+.popular-button:hover{
+  background: #DDDDDD;
+}
+
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<body>
+  
+    <div class="d-flex justify-content-center">
+    <form method="POST">
+      
+      <h1>Please put some sentence from a book you want, and can recommend a similar book to you!</h1>
+      <h3>Or, Please put a book name here so we can recommend a similar book to you!</h3>
+      <h3>Or, put whatever you want!</h3>
+      <div class="d-flex justify-content-center" >
+          <select name='select_model' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected>Select a model you want...</option>
+            <option value="Cosine_sim">Cosine Similarity</option>
+            <option value="Item-based">Item-based</option>
+            <option value="Content-based">Content-based</option>
+            <option value="Item+Content">Item+Content</option>
+          </select>
+          <div><label>book recommend: <input type="text" name="book"></label></div>
+          <input type="submit" value="Search" class="btn btn-info">
+      </div>
+    </form>
+    </div>
+</body>
+</html>
